@@ -1,4 +1,7 @@
-const reducer = (state, action) => {
+import { initialState } from '../initialState/index'
+
+
+const reducer = (state = initialState, action) => {
     switch (action.type) {
       case 'ADD_TO_CART':
         return {
