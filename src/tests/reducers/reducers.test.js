@@ -2,11 +2,11 @@ import reducer from '../../reducers'
 import ProductMock from '../mocks/productMock'
 
 describe('Testing Reducers', () => {
-    test('Return initial state', () => {
+    test('Return Initial State', () => {
         expect(reducer([], '')).toEqual([])
     })
 
-    test('Return One Product Added to Cart', () => {
+    test('Return State with One Product Added to Cart', () => {
         const actionToBeSent = {
             type: 'ADD_TO_CART',
             payload: ProductMock
@@ -17,7 +17,7 @@ describe('Testing Reducers', () => {
         expect(reducer({cart: []},actionToBeSent)).toEqual(stateExpected)
     })
 
-    test('Remove One Product From Cart', () => {
+    test('Return State with One Product Removed From Cart', () => {
         const actionToAdd = {
             type: 'ADD_TO_CART',
             payload: ProductMock
