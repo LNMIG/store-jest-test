@@ -1,6 +1,6 @@
 import React from "react"
 import {render, screen, fireEvent} from '@testing-library/react'
-import ProductMock from "../mocks/productMock"
+import ProductMock from "../mocks/productMock" // eslint-disable-line
 import Product from '../../components/product'
 
 

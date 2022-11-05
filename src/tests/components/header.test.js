@@ -1,4 +1,5 @@
 import React from "react"
+import { create } from "react-test-renderer"
 import {render, screen} from '@testing-library/react'
 import ProviderMock from "../mocks/providerMock"
 import Header from '../../components/header'
@@ -30,5 +31,19 @@ describe(('Testing Header component'), () => {
             <Header/>
         </ProviderMock>
       )
+    })
+})
+
+
+describe(('Header snapshot'), () => {
+    test('Check Header snapshot', () => {
+        const header = create(
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Header/>
+                </BrowserRouter>
+            </Provider>
+        )
+        expect(header.toJSON).toMatchSnapshot()
     })
 })

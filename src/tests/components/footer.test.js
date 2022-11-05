@@ -1,6 +1,6 @@
 import React from "react";
-import {render, screen} from '@testing-library/react'
-
+import { create } from "react-test-renderer"
+import { render, screen } from '@testing-library/react'
 import Footer from '../../components/footer.jsx'
 
 describe(('Testing footer component'), () => {
@@ -12,4 +12,11 @@ describe(('Testing footer component'), () => {
         render(<Footer/>)
         expect(screen.getByText('Rights reserved?')).toBeInTheDocument()
       })
+})
+
+describe(('Footer snapshot'), () => {
+    test("Checking component footer's UI", () => {
+      const footer = create(<Footer/>)
+      expect(footer.toJSON).toMatchSnapshot()
+    })
 })
