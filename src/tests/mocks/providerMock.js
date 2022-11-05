@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { createBrowserHistory } from 'history';
-import reducer from '../../reducers/index.js';
+import reducer from '../../reducers/index';
 
 const store = configureStore({ reducer });
 const history = createBrowserHistory()
