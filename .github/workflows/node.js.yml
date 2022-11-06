@@ -38,6 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/setup-node@v2
+    - run: npm run build --if-present
     - name: Install Vercel CLI
       run: npm install --global vercel@canary
     - name: Pull Vercel Environment Information
