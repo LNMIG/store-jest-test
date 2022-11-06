@@ -32,7 +32,7 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
 
-    Deploy-Production:
+  Deploy-Production:
     - uses: actions/checkout@v2
     - name: Install Vercel CLI
       run: npm install --global vercel@canary
